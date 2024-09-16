@@ -1,21 +1,59 @@
-package day4;
+package day36;
 
-// a function that call itself is called recursion;
-// every recursive function needs a base case or a coundation to stop a funcation or
-//it will go in infinite state 
-//solution of recursive function can be also solve with itretive (loop) funcation
+/*
+ * when a funcation call it self it is called recursive funcation
+ * 
+ * recursive funcation can go in infinat loop to stop that we use a base case  
+ * 
+ * three steps of recursion 
+ * i)find the base case
+ * ii)find the relation between the problem and subproblems
+ * iii)generalise the relation
+ */
+
 public class recursion {
 
-    static int facto(int n){
-        if (n==0||n==1) {
-            return 1;           //here it will call it self until the base case occar
-        }                       
-        else{
-            return n*facto(n-1);  //it will return the value and call the funcation with the new value                                  
-        }                         //that is been return
+    static void printHello(int n){
+        if (n==0) {
+            return;
+        }
+        System.out.println("awef");
+        printHello(n-1);
+    }
+    //find the sum of n natural numbers
+    static int sum(int n){
+        if (n==1) {
+            return 1;
+        }
+        return n+sum(n-1);
+    }
+    //find x^y 
+    static int power(int x,int y){
+        if (y==0) {
+            return 1;
+        }
+        return x*(power(x, y-1));
+    }
+    //find the number of ways in n*m matrix
+    static int ways(int m,int n){
+        if(n==1||m==1){
+            return 1;
+        }
+        return ways(m-1, n)+ways(m, n-1);
+    }
+
+    //josephus problem
+    static int josephus(int n,int k){
+        if (n==1) {
+            return 0;
+        }
+        return (josephus(n-1, k)+k)%n;
     }
     public static void main(String[] args) {
-        int x=5;
-        System.out.println(facto(x));
+       // printHello(5);
+        System.out.println(sum(5));
+        System.out.println(power(3,4));
+        System.out.println(ways(4, 3));
+        System.out.println(josephus(5, 3));
     }
 }

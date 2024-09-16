@@ -1,22 +1,7 @@
-package day29;
-
-import java.util.*;
+package day53;
 
 public class linkedlist {
-   public static void main(String[] args) {
-     LinkedList<String> ll = new LinkedList<String>(); 
-  
-         
-        ll.add("CPP"); 
-        ll.add("JAVA"); 
-        ll.addLast("PYTHON"); 
-        ll.addFirst("PHP");
+    public static void main(String[] args) {
         
-        for (int i=0;i<ll.size();i++){
-            System.out.println(ll.get(i));
-        }
-        for (int i=ll.size()-1;i>=0;i--){
-            System.out.println(ll.get(i));
-        }
-   }
+    }
 }
